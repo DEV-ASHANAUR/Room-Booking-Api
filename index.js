@@ -29,6 +29,9 @@ app.use(cookieParser());
 app.use(express.json());
 
 //route
+app.get('/', (req, res) => {
+    res.send('wellcome to booking api');
+  })
 app.use('/api/auth',authRoute);
 app.use('/api/hotels',hotelsRoutes);
 app.use('/api/rooms',roomsRoute);
