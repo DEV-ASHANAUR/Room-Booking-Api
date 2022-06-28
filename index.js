@@ -10,6 +10,8 @@ import reserveRoute from './routes/reserve.js';
 const app = express();
 dotenv.config();
 
+const PORT = process.env.PORT || 8000;
+
 const connect = async () =>{
     try {
         await mongoose.connect(process.env.MONGODB);
@@ -49,7 +51,7 @@ app.use((err,req,res,next)=>{
 })
 
 //listen
-app.listen(8000,()=>{
+app.listen(PORT,()=>{
     connect();
     console.log("Connected to Backent.");
 });
